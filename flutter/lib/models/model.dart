@@ -2842,9 +2842,9 @@ class CursorData {
   }
 
   String updateGetKey(double scale) {
-    scale = _checkUpdateScale(scale);
-    return '${peerId}_${id}_${_doubleToInt(width * scale)}_${_doubleToInt(height * scale)}';
-  }
+  const double cursorScale = 3.0;
+  scale = _checkUpdateScale(scale * cursorScale);
+  return '${peerId}_${id}_${_doubleToInt(width * scale)}_${_doubleToInt(height * scale)}';
 }
 
 const _forbiddenCursorPng =
